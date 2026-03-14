@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Question</title>
+
+<style>
+
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#89f7fe,#66a6ff);
+font-family:Arial;
+overflow:hidden;
+}
+
+.container{
+text-align:center;
+background:white;
+padding:60px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+position:relative;
+width:400px;
+height:200px;
+}
+
+h1{
+font-size:28px;
+}
+
+button{
+font-size:20px;
+padding:10px 25px;
+margin:10px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+}
+
+#yes{
+background:#4CAF50;
+color:white;
+}
+
+#no{
+background:#999;
+color:white;
+position:absolute;
+left:200px;
+top:120px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1 id="text">Farhan, Are you gay? 🌈</h1>
+
+<button id="yes">Yes</button>
+<button id="no">No</button>
+
+</div>
+
+<script>
+
+let noBtn = document.getElementById("no");
+let container = document.querySelector(".container");
+
+document.getElementById("yes").onclick = function(){
+document.getElementById("text").innerHTML =
+"Thanks for answering honestly Farhan 😆";
+noBtn.style.display="none";
+this.style.display="none";
+};
+
+noBtn.addEventListener("mouseover", function(){
+
+let maxX = container.clientWidth - noBtn.clientWidth;
+let maxY = container.clientHeight - noBtn.clientHeight;
+
+let randomX = Math.random() * maxX;
+let randomY = Math.random() * maxY;
+
+noBtn.style.left = randomX + "px";
+noBtn.style.top = randomY + "px";
+
+});
+
+</script>
+
+</body>
+</html>
